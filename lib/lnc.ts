@@ -25,8 +25,6 @@ export default class LNC {
         // merge the passed in config with the defaults
         const config = Object.assign({}, DEFAULT_CONFIG, lncConfig);
 
-        this._lncClientCode = config.lncClientCode;
-
         if (config.credentialStore) {
             this.credentials = config.credentialStore;
         } else {

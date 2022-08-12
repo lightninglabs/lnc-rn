@@ -1,4 +1,5 @@
 export interface ClientGlobal {
+    /*
      * Returns true if the LNC client is currently connected to the proxy server
      */
     lncClientIsConnected: () => boolean;

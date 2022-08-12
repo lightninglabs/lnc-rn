@@ -12,12 +12,14 @@
     "protoc_version": "3.15.8"
   },
   "scripts": {
+    "build": "bob build",
     "test": "mocha --reporter spec",
     "update-protos": "sh scripts/update_protos.sh  ${npm_package_config_lnd_release_tag} ${npm_package_config_loop_release_tag} ${npm_package_config_pool_release_tag} ${npm_package_config_faraday_release_tag}",
     "generate": "sh scripts/generate_types.sh ${npm_package_config_lnd_release_tag} ${npm_package_config_loop_release_tag} ${npm_package_config_pool_release_tag} ${npm_package_config_faraday_release_tag} ${npm_package_config_protoc_version}",
     "prettier": "prettier --check '**/*.ts*'",
     "prettier-write": "prettier --check --write '**/*.ts*'",
     "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
     "version": "npm run prettier && git add -A lib",
@@ -40,9 +42,14 @@
   },
   "homepage": "https://github.com/lightninglabs/lnc-rn#readme",
   "devDependencies": {
+    "@babel/core": "7.18.10",
+    "@babel/runtime": "7.18.9",
+    "@react-native-community/bob": "0.17.1",
     "@types/debug": "4.1.7",
     "@types/node": "17.0.16",
+    "@types/react-native": "0.69.5",
     "chai": "4.3.6",
+    "metro-react-native-babel-preset": "0.72.0",
     "mocha": "9.2.0",
     "prettier": "2.6.0",
     "ts-loader": "9.2.6",
@@ -54,7 +61,17 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.17.8",
+    "crypto-js": "4.1.1",
     "react-native-get-random-values": "1.8.0"
+  },
+  "@react-native-community/bob": {
+    "source": "lib",
+    "output": "dist",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
   },
   "files": [
     "dist/**/*"
