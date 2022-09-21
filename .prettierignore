@@ -1,0 +1,10 @@
+.github/**
+demos/**
+dist/**
+lib/types/**
+package-lock.json
+package.json
+README.md
+test/**
+tsconfig.json
+tslint.json
