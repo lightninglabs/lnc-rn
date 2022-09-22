@@ -14,21 +14,17 @@ The constructor for the LNC object takes a parameters object with the three foll
 
 -   `pairingPhrase` (string): Your LNC pairing phrase
 -   `serverHost` (string): Specify a custom Lightning Node Connect proxy server. If not specified we'll default to `mailbox.terminal.lightning.today:443`.
--   `password` (string): By default, this module will handle storage of your local and remote keys for you in local storage. We highly recommend encrypting that data with a password you set here.
 
 ```
 import LNC from ‘@lightninglabs/lnc-rn’;
 
 const pairingPhrase = ‘artefact morning piano photo consider light’;
-const password = 'u*E0F?gU\d($N&Ckh8u)tLm';
 
 // default connection using WASM from CDN
 // WASM loaded on object creation
 // default host: mailbox.terminal.lightning.today:443
-// password used for encrypting credentials
 const lnc = new LNC({
-   pairingPhrase,
-   password
+   pairingPhrase
 });
 
 // using custom Lightning Node Connect proxy server
@@ -73,20 +69,18 @@ const insights = await faraday.channelInsights();
 #### Subscriptions
 
 ```
+import { NativeEventEmitter } from 'react-native';
 const { lnd } = lnc;
 
-// handle subscriptions
-lnd.lightning.subscribeTransactions(
-   params,
-   transaction => handleNewData(transaction),
-   error => handleError(error),
-);
+const request = {};
+const eventName = lightning.subscribePeerEvents(request);
+const eventEmitter = new NativeEventEmitter();
+listener = eventEmitter.addListener(eventName, (event: any) => {
+    console.log('Got response', event.result);
+});
 
-lnd.lightning.subscribeChannelEvents(
-   params,
-   event => handleNewChannelEventData(event),
-   error => handleError(error),
-);
+// when ready to stop listener
+listener.stop();
 ```
 
 ## Updating protos
