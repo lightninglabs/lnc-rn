@@ -9,18 +9,9 @@
   "files": [
     "dist/**/*"
   ],
-  "config": {
-    "lnd_release_tag": "v0.14.3-beta",
-    "loop_release_tag": "v0.19.1-beta",
-    "pool_release_tag": "v0.5.6-alpha",
-    "faraday_release_tag": "v0.2.5-alpha",
-    "protoc_version": "3.15.8"
-  },
   "scripts": {
     "build": "bob build",
     "test": "mocha --reporter spec",
-    "update-protos": "sh scripts/update_protos.sh  ${npm_package_config_lnd_release_tag} ${npm_package_config_loop_release_tag} ${npm_package_config_pool_release_tag} ${npm_package_config_faraday_release_tag}",
-    "generate": "sh scripts/generate_types.sh ${npm_package_config_lnd_release_tag} ${npm_package_config_loop_release_tag} ${npm_package_config_pool_release_tag} ${npm_package_config_faraday_release_tag} ${npm_package_config_protoc_version}",
     "prettier": "prettier --check '**/*.ts*'",
     "prettier-write": "prettier --check --write '**/*.ts*'",
     "lint": "tslint -p tsconfig.json",
@@ -46,6 +37,9 @@
     "url": "https://github.com/lightninglabs/lnc-rn/issues"
   },
   "homepage": "https://github.com/lightninglabs/lnc-rn#readme",
+  "dependencies": {
+    "@lightninglabs/lnc-core": "v0.1.12-alpha"
+  },
   "devDependencies": {
     "@babel/core": "7.18.10",
     "@babel/runtime": "7.18.9",
