@@ -14,7 +14,6 @@ import java.security.cert.X509Certificate
 import engineering.lightning.lnc.mobile.rn.AndroidCallback
 
 import mobile.Mobile;
-import mobile.NativeCallback;
 
 class LncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
@@ -23,38 +22,38 @@ class LncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMod
   }
 
   @ReactMethod
-  fun registerLocalPrivCreateCallback(onLocalPrivCreate: Callback) {
+  fun registerLocalPrivCreateCallback(namespace: String, onLocalPrivCreate: Callback) {
      val lpccb = AndroidCallback()
      lpccb.setCallback(onLocalPrivCreate)
 
-     Mobile.registerLocalPrivCreateCallback(lpccb)
+     Mobile.registerLocalPrivCreateCallback(namespace, lpccb)
   }
 
   @ReactMethod
-  fun registerRemoteKeyReceiveCallback(onRemoteKeyReceive: Callback) {
+  fun registerRemoteKeyReceiveCallback(namespace: String, onRemoteKeyReceive: Callback) {
      val rkrcb = AndroidCallback()
      rkrcb.setCallback(onRemoteKeyReceive)
 
-     Mobile.registerRemoteKeyReceiveCallback(rkrcb)
+     Mobile.registerRemoteKeyReceiveCallback(namespace, rkrcb)
   }
 
   @ReactMethod
-  fun registerAuthDataCallback(onAuthData: Callback) {
+  fun registerAuthDataCallback(namespace: String, onAuthData: Callback) {
      val oacb = AndroidCallback()
      oacb.setCallback(onAuthData)
 
-     Mobile.registerAuthDataCallback(oacb)
+     Mobile.registerAuthDataCallback(namespace, oacb)
   }
 
   @ReactMethod
-  fun initLNC() {
-     Mobile.initLNC("info")
+  fun initLNC(namespace: String) {
+     Mobile.initLNC(namespace, "info")
   }
 
   @ReactMethod
-  fun isConnected(promise: Promise) {
+  fun isConnected(namespace: String, promise: Promise) {
      try {
-        var response = Mobile.isConnected()
+        var response = Mobile.isConnected(namespace)
         promise.resolve(response);
      } catch(e: Throwable) {
         promise.reject("request Error", e);
@@ -62,9 +61,9 @@ class LncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMod
   }
 
   @ReactMethod
-  fun status(promise: Promise) {
+  fun status(namespace: String, promise: Promise) {
      try {
-        var response = Mobile.status()
+        var response = Mobile.status(namespace)
         promise.resolve(response);
      } catch(e: Throwable) {
         promise.reject("request Error", e);
@@ -72,9 +71,9 @@ class LncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMod
   }
 
   @ReactMethod
-  fun expiry(promise: Promise) {
+  fun expiry(namespace: String, promise: Promise) {
      try {
-        var response = Mobile.getExpiry()
+        var response = Mobile.getExpiry(namespace)
         promise.resolve(response);
      } catch(e: Throwable) {
         promise.reject("request Error", e);
@@ -82,9 +81,9 @@ class LncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMod
   }
 
   @ReactMethod
-  fun isReadOnly(promise: Promise) {
+  fun isReadOnly(namespace: String, promise: Promise) {
      try {
-        var response = Mobile.isReadOnly()
+        var response = Mobile.isReadOnly(namespace)
         promise.resolve(response);
      } catch(e: Throwable) {
         promise.reject("request Error", e);
@@ -92,9 +91,9 @@ class LncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMod
   }
 
   @ReactMethod
-  fun hasPerms(permission: String, promise: Promise) {
+  fun hasPerms(namespace: String, permission: String, promise: Promise) {
      try {
-        var response = Mobile.hasPermissions(permission)
+        var response = Mobile.hasPermissions(namespace, permission)
         promise.resolve(response);
      } catch(e: Throwable) {
         promise.reject("request Error", e);
@@ -102,26 +101,26 @@ class LncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMod
   }
 
   @ReactMethod
-  fun connectServer(mailboxServerAddr: String, isDevServer: Boolean = false, connectPhrase: String, localStatic: String, remoteStatic: String) {
+  fun connectServer(namespace: String, mailboxServerAddr: String, isDevServer: Boolean = false, connectPhrase: String, localStatic: String, remoteStatic: String) {
      Log.d("connectMailbox", "called with connectPhrase: " + connectPhrase
      + " and mailboxServerAddr: " + mailboxServerAddr);
 
-     Mobile.connectServer(mailboxServerAddr, isDevServer, connectPhrase, localStatic ?: "", remoteStatic ?: "")
+     Mobile.connectServer(namespace, mailboxServerAddr, isDevServer, connectPhrase, localStatic ?: "", remoteStatic ?: "")
   }
 
   @ReactMethod
-  fun disconnect() {
-     Mobile.disconnect()
+  fun disconnect(namespace: String) {
+     Mobile.disconnect(namespace)
   }
 
   @ReactMethod
-  fun invokeRPC(route: String, requestData: String, rnCallback: Callback) {
+  fun invokeRPC(namespace: String, route: String, requestData: String, rnCallback: Callback) {
      Log.d("request", "called with route: " + route
      + " and requestData: " + requestData);
 
      val gocb = AndroidCallback()
      gocb.setCallback(rnCallback)
-     Mobile.invokeRPC(route, requestData, gocb)
+     Mobile.invokeRPC(namespace, route, requestData, gocb)
   }
 
   private fun sendEvent(event: String, data: String) {
@@ -134,10 +133,10 @@ class LncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMod
   }
 
   @ReactMethod
-  fun initListener(eventName: String, request: String) {
+  fun initListener(namespace: String, eventName: String, request: String) {
      val gocb = AndroidStreamingCallback()
      gocb.setEventName(eventName)
      gocb.setCallback(::sendEvent)
-     Mobile.invokeRPC(eventName, request, gocb)
+     Mobile.invokeRPC(namespace, eventName, request, gocb)
   }
 }

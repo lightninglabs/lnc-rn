@@ -5,6 +5,12 @@ export interface LncConfig {
      */
     serverHost?: string;
     /**
+     * Identifier name used for each connection. You can maintain multiple
+     * connections if you use different namespaces. If not specified we'll default
+     * to `default`.
+     */
+    namespace?: string;
+    /**
      * The LNC pairing phrase used to initialize the connection to the LNC proxy.
      * This value will be passed along to the credential store.
      */
