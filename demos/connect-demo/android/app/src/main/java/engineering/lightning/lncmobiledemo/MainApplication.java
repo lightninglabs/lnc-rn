@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+// import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 import com.emeraldsanto.encryptedstorage.RNEncryptedStoragePackage;
 import com.emeraldsanto.encryptedstorage.RNEncryptedStoragePackage;
 import com.facebook.react.ReactInstanceManager;
