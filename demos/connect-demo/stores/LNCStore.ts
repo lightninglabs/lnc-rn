@@ -1,4 +1,4 @@
-import { action, makeObservable, observable } from 'mobx';
+import { action, configure, makeObservable, observable } from 'mobx';
 import LNC from '@lightninglabs/lnc-rn';
 import CredentialStore from './../credentialStore';
 
@@ -10,6 +10,10 @@ export default class LNCStore {
 
     constructor() {
         makeObservable(this);
+
+        configure({
+            enforceActions: 'never'
+        });
     }
 
     @action
