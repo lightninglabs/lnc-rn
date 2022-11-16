@@ -23,14 +23,16 @@ export default class LncCredentialStore implements CredentialStore {
     private _localKey: string = '';
     private _remoteKey: string = '';
     private _pairingPhrase: string = '';
+    // namespace
+    public namespace: string = '';
 
     /**
      * Constructs a new `LncCredentialStore` instance
      */
-    constructor(pairingPhrase?: string) {
-        if (pairingPhrase) this.pairingPhrase = pairingPhrase;
+    constructor(namespace: string = 'default') {
+        this.namespace = namespace;
 
-        this.load(pairingPhrase);
+        this.load();
     }
 
     //
@@ -57,7 +59,7 @@ export default class LncCredentialStore implements CredentialStore {
     set pairingPhrase(phrase: string) {
         this._pairingPhrase = phrase;
         this.persisted.pairingPhrase = phrase;
-        this.load(phrase);
+        this.load();
     }
 
     /** Stores the local private key which LNC uses to reestablish a connection */
@@ -94,7 +96,7 @@ export default class LncCredentialStore implements CredentialStore {
 
     /** Clears any persisted data in the store */
     clear() {
-        const key = `${STORAGE_KEY}:${this._pairingPhrase}`;
+        const key = `${STORAGE_KEY}:${this.namespace}`;
         EncryptedStorage.removeItem(key);
         this.persisted = {
             serverHost: this.persisted.serverHost,
@@ -108,11 +110,9 @@ export default class LncCredentialStore implements CredentialStore {
     }
 
     /** Loads persisted data from EncryptedStorage */
-    async load(pairingPhrase?: string) {
-        // only load if pairingPhrase is set
-        if (!pairingPhrase) return;
+    async load() {
         try {
-            const key = `${STORAGE_KEY}:${pairingPhrase}`;
+            const key = `${STORAGE_KEY}:${this.namespace}`;
             const json = await EncryptedStorage.getItem(key);
             if (!json) return this._save();
             this.persisted = JSON.parse(json);
@@ -130,9 +130,9 @@ export default class LncCredentialStore implements CredentialStore {
 
     /** Saves persisted data to EncryptedStorage */
     private _save() {
-        // only save if pairingPhrase is set
-        if (!this._pairingPhrase) return;
-        const key = `${STORAGE_KEY}:${this._pairingPhrase}`;
+        // only save if namespace is set
+        if (!this.namespace) return;
+        const key = `${STORAGE_KEY}:${this.namespace}`;
         EncryptedStorage.setItem(key, JSON.stringify(this.persisted));
     }
 }

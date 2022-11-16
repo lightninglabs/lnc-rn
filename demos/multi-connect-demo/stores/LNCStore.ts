@@ -25,11 +25,11 @@ export default class LNCStore {
 
         this.lnc1 = new LNC({
             namespace: 'one',
-            credentialStore: new CredentialStore()
+            credentialStore: new CredentialStore('one')
         });
         this.lnc2 = new LNC({
             namespace: 'two',
-            credentialStore: new CredentialStore()
+            credentialStore: new CredentialStore('two')
         });
 
         this.lnc1.credentials.pairingPhrase = mnemonic1;
