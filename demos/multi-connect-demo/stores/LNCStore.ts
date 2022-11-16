@@ -1,5 +1,6 @@
 import { action, configure, makeObservable, observable } from 'mobx';
 import LNC from '@lightninglabs/lnc-rn';
+import { lnrpc } from '@lightninglabs/lnc-core';
 import CredentialStore from './../credentialStore';
 
 export default class LNCStore {
@@ -7,8 +8,8 @@ export default class LNCStore {
     @observable public loading: boolean = false;
     @observable public lnc1: any;
     @observable public lnc2: any;
-    @observable public info1: any;
-    @observable public info2: any;
+    @observable public info1: lnrpc.GetInfoResponse;
+    @observable public info2: lnrpc.GetInfoResponse;
 
     constructor() {
         makeObservable(this);
