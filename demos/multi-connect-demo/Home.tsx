@@ -25,10 +25,8 @@ export default class Home extends React.Component<HomeProps, HomeStore> {
     constructor(props: any) {
         super(props);
         this.state = {
-            mnemonic1:
-                'drop sell moment shift doll pull october gold squeeze gas',
-            mnemonic2:
-                'prosper brother journey park peanut ten exact photo harbor picnic'
+            mnemonic1: '',
+            mnemonic2: ''
         };
     }
 
@@ -58,12 +56,12 @@ export default class Home extends React.Component<HomeProps, HomeStore> {
                         </Text>
                         <TextInput
                             onChangeText={this.onChangeMnemonic1}
-                            placeholder="Mnemonic 1"
+                            placeholder="Enter pairing mnemonic #1 here"
                             value={mnemonic1}
                         />
                         <TextInput
                             onChangeText={this.onChangeMnemonic2}
-                            placeholder="Mnemonic 2"
+                            placeholder="Enter pairing mnemonic #2 here"
                             value={mnemonic2}
                         />
                         <Button title="Connect" onPress={this.attemptConnect} />
