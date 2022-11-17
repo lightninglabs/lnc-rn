@@ -15,7 +15,7 @@ interface HomeProps {
 }
 
 interface HomeStore {
-    pnemonic: string;
+    mnemonic: string;
 }
 
 @inject('LNCStore')
@@ -24,22 +24,21 @@ export default class Home extends React.Component<HomeProps, HomeStore> {
     constructor(props: any) {
         super(props);
         this.state = {
-            pnemonic:
-                'jump pave throw twenty noodle caution case dream song crucial'
+            mnemonic: ''
         };
     }
 
-    onChangePnemonic = (text) => this.setState({ pnemonic: text });
+    onChangeMnemonic = (text) => this.setState({ mnemonic: text });
 
     attemptConnect = async () => {
-        await this.props.LNCStore.connect(this.state.pnemonic);
+        await this.props.LNCStore.connect(this.state.mnemonic);
         this.props.LNCStore.getInfo();
     };
 
     disconnect = () => this.props.LNCStore.disconnect();
 
     render() {
-        const { pnemonic } = this.state;
+        const { mnemonic } = this.state;
         const { LNCStore } = this.props;
         const { lnc, loading, connected, info } = LNCStore;
 
@@ -50,9 +49,9 @@ export default class Home extends React.Component<HomeProps, HomeStore> {
                     <>
                         <Text>lnc-mobile demo app</Text>
                         <TextInput
-                            onChangeText={this.onChangePnemonic}
-                            placeholder="Pnemonic"
-                            value={pnemonic}
+                            onChangeText={this.onChangeMnemonic}
+                            placeholder="Enter pairing mnemonic here"
+                            value={mnemonic}
                         />
                         <Button title="Connect" onPress={this.attemptConnect} />
                     </>

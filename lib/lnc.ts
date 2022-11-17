@@ -13,13 +13,14 @@ import { wasmLog as log } from './util/log';
 
 /** The default values for the LncConfig options */
 const DEFAULT_CONFIG = {
+    namespace: 'default',
     serverHost: 'mailbox.terminal.lightning.today:443'
 } as Required<LncConfig>;
 
 export default class LNC {
     result?: any;
 
-    _lncClientCode: any;
+    _namespace: string;
     credentials: CredentialStore;
 
     lnd: LndApi;
@@ -30,6 +31,8 @@ export default class LNC {
     constructor(lncConfig?: LncConfig) {
         // merge the passed in config with the defaults
         const config = Object.assign({}, DEFAULT_CONFIG, lncConfig);
+
+        this._namespace = config.namespace;
 
         if (config.credentialStore) {
             this.credentials = config.credentialStore;
@@ -47,15 +50,7 @@ export default class LNC {
         this.pool = new PoolApi(createRpc, this);
         this.faraday = new FaradayApi(createRpc, this);
 
-        NativeModules.LncModule.registerLocalPrivCreateCallback(
-            this.onLocalPrivCreate
-        );
-        NativeModules.LncModule.registerRemoteKeyReceiveCallback(
-            this.onRemoteKeyReceive
-        );
-        NativeModules.LncModule.registerAuthDataCallback(this.onAuthData);
-
-        NativeModules.LncModule.initLNC();
+        NativeModules.LncModule.initLNC(this._namespace);
     }
 
     onLocalPrivCreate = (keyHex: string) => {
@@ -73,24 +68,27 @@ export default class LNC {
     };
 
     async isConnected() {
-        return await NativeModules.LncModule.isConnected();
+        return await NativeModules.LncModule.isConnected(this._namespace);
     }
 
     async status() {
-        return await NativeModules.LncModule.status();
+        return await NativeModules.LncModule.status(this._namespace);
     }
 
     async expiry() {
-        const expiry = await NativeModules.LncModule.expiry();
+        const expiry = await NativeModules.LncModule.expiry(this._namespace);
         return new Date(expiry * 1000);
     }
 
     async isReadOnly() {
-        return await NativeModules.LncModule.isReadOnly();
+        return await NativeModules.LncModule.isReadOnly(this._namespace);
     }
 
     async hasPerms(permission: string) {
-        return await NativeModules.LncModule.hasPerms(permission);
+        return await NativeModules.LncModule.hasPerms(
+            this._namespace,
+            permission
+        );
     }
 
     /**
@@ -102,11 +100,25 @@ export default class LNC {
         let connected = await this.isConnected();
         if (connected) return;
 
+        NativeModules.LncModule.registerLocalPrivCreateCallback(
+            this._namespace,
+            this.onLocalPrivCreate
+        );
+        NativeModules.LncModule.registerRemoteKeyReceiveCallback(
+            this._namespace,
+            this.onRemoteKeyReceive
+        );
+        NativeModules.LncModule.registerAuthDataCallback(
+            this._namespace,
+            this.onAuthData
+        );
+
         const { pairingPhrase, localKey, remoteKey, serverHost } =
             this.credentials;
 
         // connect to the server
         NativeModules.LncModule.connectServer(
+            this._namespace,
             serverHost,
             false,
             pairingPhrase,
@@ -138,7 +150,7 @@ export default class LNC {
      * Disconnects from the proxy server
      */
     disconnect() {
-        NativeModules.LncModule.disconnect();
+        NativeModules.LncModule.disconnect(this._namespace);
     }
 
     /**
@@ -151,6 +163,7 @@ export default class LNC {
             log.debug(`${method} request`, request);
             const reqJSON = JSON.stringify(request || {});
             NativeModules.LncModule.invokeRPC(
+                this._namespace,
                 method,
                 reqJSON,
                 (response: string) => {
@@ -180,7 +193,7 @@ export default class LNC {
     subscribe(method: string, request?: object): string {
         log.debug(`${method} request`, request);
         const reqJSON = JSON.stringify(request || {});
-        NativeModules.LncModule.initListener(method, reqJSON);
+        NativeModules.LncModule.initListener(this._namespace, method, reqJSON);
         return method;
     }
 }
