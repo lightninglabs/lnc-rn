@@ -1,17 +1,4 @@
 {
-  "expo": {
-    "name": "lnc-mobile-demo",
-    "slug": "lnc-mobile-demo",
-    "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "android": {
-      "package": "engineering.lightning.lncmobiledemo"
-    },
-    "ios": {
-      "bundleIdentifier": "engineering.lightning.lncmobiledemo"
-    }
-  },
-  "name": "lnc-mobile-demo"
+  "name": "lncmobiledemo",
+  "displayName": "lncmobiledemo"
 }

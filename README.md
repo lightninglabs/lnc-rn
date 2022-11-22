@@ -70,11 +70,11 @@ const insights = await faraday.channelInsights();
 
 ```
 import { NativeEventEmitter } from 'react-native';
-const { lnd } = lnc;
+const { LncModule } = NativeModules;
 
 const request = {};
-const eventName = lightning.subscribePeerEvents(request);
-const eventEmitter = new NativeEventEmitter();
+const eventName = lnc.lnd.lightning.subscribePeerEvents(request);
+const eventEmitter = new NativeEventEmitter(LncModule);
 listener = eventEmitter.addListener(eventName, (event: any) => {
     console.log('Got response', event.result);
 });
