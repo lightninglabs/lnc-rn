@@ -1,6 +1,5 @@
 import { action, configure, makeObservable, observable } from 'mobx';
-import LNC from '@lightninglabs/lnc-rn';
-import { lnrpc } from '@lightninglabs/lnc-core';
+import LNC, { lnrpc } from '@lightninglabs/lnc-rn';
 import CredentialStore from './../credentialStore';
 
 export default class LNCStore {
