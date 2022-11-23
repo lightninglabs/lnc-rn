@@ -101,11 +101,17 @@ class LncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMod
   }
 
   @ReactMethod
-  fun connectServer(namespace: String, mailboxServerAddr: String, isDevServer: Boolean = false, connectPhrase: String, localStatic: String, remoteStatic: String) {
+  fun connectServer(namespace: String, mailboxServerAddr: String, isDevServer: Boolean = false, connectPhrase: String, localStatic: String, remoteStatic: String, promise: Promise) {
      Log.d("connectMailbox", "called with connectPhrase: " + connectPhrase
      + " and mailboxServerAddr: " + mailboxServerAddr);
 
-     Mobile.connectServer(namespace, mailboxServerAddr, isDevServer, connectPhrase, localStatic ?: "", remoteStatic ?: "")
+     try {
+         Mobile.connectServer(namespace, mailboxServerAddr, isDevServer, connectPhrase, localStatic ?: "", remoteStatic ?: "")
+         promise.resolve(null)
+     } catch (e: Exception) {
+         val exceptionAsString = e.toString()
+         promise.resolve(exceptionAsString)
+     }
   }
 
   @ReactMethod

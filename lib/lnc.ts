@@ -18,8 +18,6 @@ const DEFAULT_CONFIG = {
 } as Required<LncConfig>;
 
 export default class LNC {
-    result?: any;
-
     _namespace: string;
     credentials: CredentialStore;
 
@@ -97,7 +95,7 @@ export default class LNC {
      */
     async connect() {
         // do not attempt to connect multiple times
-        let connected = await this.isConnected();
+        const connected = await this.isConnected();
         if (connected) return;
 
         NativeModules.LncModule.registerLocalPrivCreateCallback(
@@ -117,7 +115,7 @@ export default class LNC {
             this.credentials;
 
         // connect to the server
-        NativeModules.LncModule.connectServer(
+        const error = await NativeModules.LncModule.connectServer(
             this._namespace,
             serverHost,
             false,
@@ -126,24 +124,7 @@ export default class LNC {
             remoteKey
         );
 
-        // repeatedly check if the connection was successful
-        return new Promise<void>((resolve, reject) => {
-            let counter = 0;
-            const interval = setInterval(async () => {
-                counter++;
-                connected = await this.isConnected();
-                if (connected) {
-                    clearInterval(interval);
-                    resolve();
-                    log.info('The LNC client is connected to the server');
-                } else if (counter > 20) {
-                    clearInterval(interval);
-                    reject(
-                        'Failed to connect the LNC client to the proxy server'
-                    );
-                }
-            }, 500);
-        });
+        return error;
     }
 
     /**

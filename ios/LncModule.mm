@@ -130,12 +130,16 @@ RCT_EXPORT_METHOD(connectServer:(NSString *)nameSpace
                  isDevServer:(BOOL)isDevServer
                  connectPhrase:(NSString *)connectPhrase
                  localStatic:(NSString *)localStatic
-                 remoteStatic:(NSString *)remoteStatic)
+                 remoteStatic:(NSString *)remoteStatic
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
 {
     NSError *error;
     MobileConnectServer(nameSpace, mailboxServerAddr, isDevServer, connectPhrase, localStatic, remoteStatic, &error);
     if (error) {
-        NSLog(@"connectServer error   %@",   error);
+        resolve(error.localizedDescription);
+    } else {
+        resolve(@"");
     }
 }
 
