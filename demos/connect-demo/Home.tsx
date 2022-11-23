@@ -31,8 +31,8 @@ export default class Home extends React.Component<HomeProps, HomeStore> {
     onChangeMnemonic = (text) => this.setState({ mnemonic: text });
 
     attemptConnect = async () => {
-        await this.props.LNCStore.connect(this.state.mnemonic);
-        this.props.LNCStore.getInfo();
+        const error = await this.props.LNCStore.connect(this.state.mnemonic);
+        if (!error) this.props.LNCStore.getInfo();
     };
 
     disconnect = () => this.props.LNCStore.disconnect();
@@ -40,11 +40,14 @@ export default class Home extends React.Component<HomeProps, HomeStore> {
     render() {
         const { mnemonic } = this.state;
         const { LNCStore } = this.props;
-        const { lnc, loading, connected, info } = LNCStore;
+        const { lnc, loading, connected, info, error } = LNCStore;
 
         return (
             <View style={styles.container}>
                 {!!loading && <ActivityIndicator />}
+                {!!error && !loading && (
+                    <Text style={{ color: 'red' }}>{error}</Text>
+                )}
                 {!connected && !loading && (
                     <>
                         <Text>lnc-mobile demo app</Text>
