@@ -1,7 +1,7 @@
 #import "LncModule.h"
 #import "Callback.h"
 #import "StreamingCallback.h"
-#import "Lndmobile.xcframework/ios-arm64/Lndmobile.framework/Headers/Lndmobile.h"
+#import "Lncmobile.xcframework/ios-arm64/Lncmobile.framework/Headers/Lncmobile.h"
 
 
 #ifdef RCT_NEW_ARCH_ENABLED
