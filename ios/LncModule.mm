@@ -186,37 +186,34 @@ RCT_EXPORT_METHOD(initListener:(NSString *)nameSpace
 }
 
 - (NSArray<NSString *> *)supportedEvents {
-    // TODO add all streaming events names to list
     return @[
-        @"lnrpc.Lightning.SubscribePeerEvents",
-        @"lnrpc.Lightning.SubscribePeerEvents",
+        @"chainrpc.ChainNotifier.RegisterBlockEpochNtfn",
         @"chainrpc.ChainNotifier.RegisterConfirmationsNtfn",
         @"chainrpc.ChainNotifier.RegisterSpendNtfn",
-        @"chainrpc.ChainNotifier.RegisterBlockEpochNtfn",
         @"invoicesrpc.Invoices.SubscribeSingleInvoice",
-        @"lnrpc.Lightning.SubscribeTransactions",
-        @"lnrpc.Lightning.SubscribePeerEvents",
-        @"lnrpc.Lightning.SubscribeChannelEvents",
-        @"lnrpc.Lightning.OpenChannel",
         @"lnrpc.Lightning.ChannelAcceptor",
         @"lnrpc.Lightning.CloseChannel",
+        @"lnrpc.Lightning.OpenChannel",
+        @"lnrpc.Lightning.RegisterRPCMiddleware",
         @"lnrpc.Lightning.SendPayment",
         @"lnrpc.Lightning.SendToRoute",
-        @"lnrpc.Lightning.SubscribeInvoices",
-        @"lnrpc.Lightning.SubscribeChannelGraph",
         @"lnrpc.Lightning.SubscribeChannelBackups",
-        @"lnrpc.Lightning.RegisterRPCMiddleware",
+        @"lnrpc.Lightning.SubscribeChannelEvents",
+        @"lnrpc.Lightning.SubscribeChannelGraph",
         @"lnrpc.Lightning.SubscribeCustomMessages",
-        @"routerrpc.Router.SendPaymentV2",
-        @"routerrpc.Router.TrackPaymentV2",
-        @"routerrpc.Router.SubscribeHtlcEvents",
-        @"routerrpc.Router.SendPayment",
-        @"routerrpc.Router.TrackPayment",
-        @"routerrpc.Router.HtlcInterceptor",
+        @"lnrpc.Lightning.SubscribeInvoices",
+        @"lnrpc.Lightning.SubscribePeerEvents",
+        @"lnrpc.Lightning.SubscribeTransactions",
         @"looprpc.SwapClient.Monitor",
         @"poolrpc.ChannelAuctioneer.SubscribeBatchAuction",
         @"poolrpc.ChannelAuctioneer.SubscribeSidecar",
         @"poolrpc.HashMail.RecvStream"
+        @"routerrpc.Router.HtlcInterceptor",
+        @"routerrpc.Router.SendPayment",
+        @"routerrpc.Router.SendPaymentV2",
+        @"routerrpc.Router.SubscribeHtlcEvents",
+        @"routerrpc.Router.TrackPayment",
+        @"routerrpc.Router.TrackPaymentV2"
     ];
 }
 
