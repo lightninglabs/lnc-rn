@@ -1,4 +1,5 @@
 const { getDefaultConfig } = require('metro-config');
+const path = require('path');
 
 module.exports = (async () => {
   const {
@@ -6,7 +7,7 @@ module.exports = (async () => {
   } = await getDefaultConfig();
   return {
     watchFolders: [
-      "/Users/satoshi/Repos/lightninglabs/lnc-rn"
+      path.resolve(path.join('..','..')),
     ],
     resolver: {
       assetExts: assetExts.filter(ext => ext !== 'svg'),

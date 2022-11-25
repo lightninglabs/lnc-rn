@@ -5,6 +5,7 @@ import CredentialStore from './../credentialStore';
 export default class LNCStore {
     @observable public connected: boolean = false;
     @observable public loading: boolean = false;
+    @observable public error: string | null;
     @observable public lnc: any;
     @observable public info: lnrpc.GetInfoResponse;
 
@@ -18,6 +19,7 @@ export default class LNCStore {
 
     @action
     public connect = async (mnemonic: string) => {
+        this.error = null;
         this.loading = true;
         this.lnc = new LNC({
             credentialStore: new CredentialStore()
@@ -25,9 +27,33 @@ export default class LNCStore {
         this.lnc.credentials.pairingPhrase = mnemonic;
         this.lnc.credentials.serverHost =
             'mailbox.terminal.lightning.today:443';
-        await this.lnc.connect();
-        this.loading = false;
-        this.connected = true;
+
+        const error = await this.lnc.connect();
+        if (error) {
+            this.loading = false;
+            this.error = error;
+            return error;
+        }
+
+        return new Promise<void>((resolve) => {
+            let counter = 0;
+            const interval = setInterval(async () => {
+                counter++;
+                const connected = await this.lnc.isConnected();
+                if (connected) {
+                    clearInterval(interval);
+                    this.loading = false;
+                    this.connected = true;
+                    resolve();
+                } else if (counter > 20) {
+                    clearInterval(interval);
+                    this.error =
+                        'Failed to connect the LNC client to the proxy server';
+                    this.loading = false;
+                    resolve(this.error);
+                }
+            }, 500);
+        });
     };
 
     @action
