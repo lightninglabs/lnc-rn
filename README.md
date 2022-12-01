@@ -4,7 +4,36 @@
 
 ## Install
 
+First, install the npm module
 `npm i @lightninglabs/lnc-rn`
+
+Navigate to the lnc-rn npm module folder
+`cd node_modules/@lightninglabs/lnc-rn`
+
+Fetch the required LNC libraries
+`npm run fetch-libraries`
+
+### Android
+
+In your app's `android/app/build.gradle` file, add the following line to your `dependency` block:
+
+```implementation files("../../node_modules/@lightninglabs/lnc-rn/android/libs/lnc-mobile.aar")```
+
+### iOS
+
+First, in Xcode, drag the `Lncmobile.xcframework` folder into your Xcode project - ideally grouped in the project's Framework folder. Make sure you add it to your project's primary target.
+
+The `Lncmobile.xcframework` folder can be found in the `node_modules/@lightninglabs/lnc-rn/ios` directory.
+
+Then, in your project's `ios` folder, run `pod install`.
+
+### Building library files manually
+
+The library files can be built manually from the [Lightning Node Connect](https://github.com/lightninglabs/lightning-node-connect) repo using the `make android` and `make ios` commands.
+
+## Persistent storage
+
+Unlike [lnc-web](https://github.com/lightninglabs/lnc-web), lnc-rn does not store users' credentials by defaults. We recommend taking a look at one of the [credentialStores](https://github.com/lightninglabs/lnc-rn/blob/main/demos/connect-demo/credentialStore.ts) from our demo apps to see how you can store users' credentials securely using [react-native-encrypted-storage](https://github.com/emeraldsanto/react-native-encrypted-storage).
 
 ## API Design
 
