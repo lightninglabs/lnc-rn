@@ -7,7 +7,11 @@
   "react-native": "lib/index",
   "source": "lib/index",
   "files": [
-    "dist/**/*"
+    "android/**/*",
+    "dist/**/*",
+    "ios/**/*",
+    "fetch-libraries.sh",
+    "lnc-rn.podspec"
   ],
   "scripts": {
     "build": "bob build",
