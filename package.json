@@ -7,9 +7,10 @@
   "react-native": "lib/index",
   "source": "lib/index",
   "files": [
-    "android/**/*",
-    "dist/**/*",
-    "ios/**/*",
+    "android/",
+    "dist/",
+    "ios/",
+    "lib/",
     "fetch-libraries.sh",
     "lnc-rn.podspec"
   ],
