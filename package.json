@@ -1,13 +1,17 @@
 {
   "name": "@lightninglabs/lnc-rn",
-  "version": "0.2.1-alpha",
+  "version": "0.2.1-alpha.1",
   "description": "Lightning Node Connect npm module for React Native",
   "main": "dist/commonjs/index.js",
   "types": "dist/typescript/index.d.ts",
   "react-native": "lib/index",
   "source": "lib/index",
   "files": [
-    "dist/**/*"
+    "android/**/*",
+    "dist/**/*",
+    "ios/**/*",
+    "fetch-libraries.sh",
+    "lnc-rn.podspec"
   ],
   "scripts": {
     "build": "bob build",
