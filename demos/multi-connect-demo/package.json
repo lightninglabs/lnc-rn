@@ -6,7 +6,8 @@
     "tsc": "tsc",
     "lint": "eslint --ext .js,.ts,.tsx '*.@(js|ts|tsx)' .",
     "prettier": "prettier --check '**/*.ts*'",
-    "prettier-write": "prettier --check --write '**/*.ts*'"
+    "prettier-write": "prettier --check --write '**/*.ts*'",
+    "install-lnc": "cd node_modules/@lightninglabs/lnc-rn; yarn run fetch-libraries"
   },
   "dependencies": {
     "@lightninglabs/lnc-rn": "0.2.1-alpha.2",
