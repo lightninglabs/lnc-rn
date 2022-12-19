@@ -43,10 +43,24 @@ export default class LNCStore {
         await this.lnc1.connect();
         await this.lnc2.connect();
 
-        this.loading = false;
-        this.connected = true;
-
-        return;
+        return new Promise<void>((resolve) => {
+            let counter = 0;
+            const interval = setInterval(async () => {
+                counter++;
+                const connected1 = await this.lnc1.isConnected();
+                const connected2 = await this.lnc2.isConnected();
+                if (connected1 && connected2) {
+                    clearInterval(interval);
+                    this.loading = false;
+                    this.connected = true;
+                    resolve();
+                } else if (counter > 20) {
+                    clearInterval(interval);
+                    this.loading = false;
+                    resolve();
+                }
+            }, 500);
+        });
     };
 
     @action
