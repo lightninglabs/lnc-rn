@@ -112,6 +112,10 @@ listener = eventEmitter.addListener(eventName, (event: any) => {
 listener.stop();
 ```
 
+## Demos
+
+To highlight the functionality of `lnc-rn` we've included two demos in the repo: `connect-demo` and `multi-connect-demo`. To run these you must run `npm run install-lnc` after installing their npm dependencies to fetch the LNC mobile binaries, which are not bundled into the module directly.
+
 ## Further documentation
 
 - https://docs.lightning.engineering/lightning-network-tools/lightning-terminal/lnc-npm
