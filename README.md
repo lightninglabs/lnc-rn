@@ -11,7 +11,7 @@ Navigate to the lnc-rn npm module folder
 `cd node_modules/@lightninglabs/lnc-rn`
 
 Fetch the required LNC libraries
-`npm run fetch-libraries`
+`yarn run fetch-libraries`
 
 ### Android
 
@@ -114,7 +114,7 @@ listener.stop();
 
 ## Demos
 
-To highlight the functionality of `lnc-rn` we've included two demos in the repo: `connect-demo` and `multi-connect-demo`. To run these you must run `npm run install-lnc` after installing their npm dependencies to fetch the LNC mobile binaries, which are not bundled into the module directly.
+To highlight the functionality of `lnc-rn` we've included two demos in the repo: `connect-demo` and `multi-connect-demo`. To run these you must run `yarn run install-lnc` after installing their npm dependencies to fetch the LNC mobile binaries, which are not bundled into the module directly.
 
 ## Further documentation
 
