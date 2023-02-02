@@ -1,4 +1,4 @@
-VERSION=v0.2.1-alpha
+VERSION=v0.2.2-alpha
 
 ANDROID_ZIP_NAME=lnc-$VERSION-android.zip
 IOS_ZIP_NAME=lnc-$VERSION-ios.zip
