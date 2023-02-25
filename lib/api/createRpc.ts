@@ -5,8 +5,8 @@ import { subscriptionMethods } from '@lightninglabs/lnc-core';
 const capitalize = (s: string) => s && s[0].toUpperCase() + s.slice(1);
 
 /**
- * Creates a typed Proxy object which calls the WASM request or
- * subscribe methods depending on which function is called on the object
+ * Creates a typed Proxy object which calls the request or subscribe
+ * methods depending on which function is called on the object
  */
 export function createRpc<T extends object>(packageName: string, lnc: LNC): T {
     const rpc = {};

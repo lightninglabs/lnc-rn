@@ -49,8 +49,7 @@ import LNC from ‘@lightninglabs/lnc-rn’;
 
 const pairingPhrase = ‘artefact morning piano photo consider light’;
 
-// default connection using WASM from CDN
-// WASM loaded on object creation
+// default connection
 // default host: mailbox.terminal.lightning.today:443
 const lnc = new LNC({
    pairingPhrase
