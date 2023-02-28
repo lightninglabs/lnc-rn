@@ -85,11 +85,6 @@ export const log = Logger.fromEnv('main');
 export const grpcLog = Logger.fromEnv('grpc');
 
 /**
- * the logger for WASM requests and responses
- */
-export const wasmLog = Logger.fromEnv('wasm');
-
-/**
  * the logger for state updates via mobx actions
  */
 export const actionLog = Logger.fromEnv('action');

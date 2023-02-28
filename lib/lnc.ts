@@ -10,7 +10,7 @@ import {
 import { createRpc } from './api/createRpc';
 import { CredentialStore, LncConfig } from './types/lnc';
 import LncCredentialStore from './util/credentialStore';
-import { wasmLog as log } from './util/log';
+import { log } from './util/log';
 
 /** The default values for the LncConfig options */
 const DEFAULT_CONFIG = {
@@ -138,7 +138,7 @@ export default class LNC {
     }
 
     /**
-     * Emulates a GRPC request but uses the WASM client instead to communicate with the LND node
+     * Emulates a GRPC request but uses the mobile client instead to communicate with the LND node
      * @param method the GRPC method to call on the service
      * @param request The GRPC request message to send
      */
