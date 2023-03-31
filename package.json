@@ -1,6 +1,6 @@
 {
   "name": "@lightninglabs/lnc-rn",
-  "version": "0.2.3-alpha",
+  "version": "0.2.4-alpha",
   "description": "Lightning Node Connect npm module for React Native",
   "main": "dist/commonjs/index.js",
   "types": "dist/typescript/index.d.ts",
@@ -44,7 +44,7 @@
   },
   "homepage": "https://github.com/lightninglabs/lnc-rn#readme",
   "dependencies": {
-    "@lightninglabs/lnc-core": "0.2.3-alpha"
+    "@lightninglabs/lnc-core": "0.2.4-alpha"
   },
   "devDependencies": {
     "@babel/core": "7.18.10",
