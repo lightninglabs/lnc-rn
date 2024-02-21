@@ -1539,10 +1539,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@lightninglabs/lnc-core@^0.2.5-alpha":
-  version "0.2.5-alpha"
-  resolved "https://registry.yarnpkg.com/@lightninglabs/lnc-core/-/lnc-core-0.2.5-alpha.tgz#4150b9d8002a8dac582edc6216581feb2b613196"
-  integrity sha512-mdofMCydpNLAf0Abwy81FsuOMIrUqsxR5kZ9Qzjp+E7bZdMntsKY3p0oqq/y3o/6hfrKN7Ornht42Cebc/i9Iw==
+"@lightninglabs/lnc-core@^0.3.1-alpha":
+  version "0.3.1-alpha"
+  resolved "https://registry.yarnpkg.com/@lightninglabs/lnc-core/-/lnc-core-0.3.1-alpha.tgz#cfd6c0857a20013fb1819b40bd1158a2edc8bcf0"
+  integrity sha512-I/hThdItLWJ6RU8Z27ZIXhpBS2JJuD3+TjtaQXX2CabaUYXlcN4sk+Kx8N/zG/fk8qZvjlRWum4vHu4ZX554Fg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
