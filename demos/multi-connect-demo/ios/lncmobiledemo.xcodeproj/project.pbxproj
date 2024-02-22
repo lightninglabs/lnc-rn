@@ -12,9 +12,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		74A129D6294A2A5C00C7A86C /* Lncmobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A129D5294A2A5B00C7A86C /* Lncmobile.xcframework */; };
 		7699B88040F8A987B510C191 /* libPods-lncmobiledemo-lncmobiledemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-lncmobiledemo-lncmobiledemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		C81C96A02B87659A0091868E /* Lncmobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C969F2B87659A0091868E /* Lncmobile.xcframework */; };
 		C8FFB7E42B83E55B00A6FE5F /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FFB7E32B83E55B00A6FE5F /* libresolv.9.tbd */; };
 /* End PBXBuildFile section */
 
@@ -43,9 +43,9 @@
 		5709B34CF0A7D63546082F79 /* Pods-lncmobiledemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo.release.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-lncmobiledemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lncmobiledemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74A129D5294A2A5B00C7A86C /* Lncmobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Lncmobile.xcframework; path = "../node_modules/@lightninglabs/lnc-rn/ios/Lncmobile.xcframework"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = lncmobiledemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		C81C969F2B87659A0091868E /* Lncmobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Lncmobile.xcframework; path = "../node_modules/@lightninglabs/lnc-rn/ios/Lncmobile.xcframework"; sourceTree = "<group>"; };
 		C8FFB7E32B83E55B00A6FE5F /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -65,7 +65,7 @@
 			files = (
 				C8FFB7E42B83E55B00A6FE5F /* libresolv.9.tbd in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-lncmobiledemo.a in Frameworks */,
-				74A129D6294A2A5C00C7A86C /* Lncmobile.xcframework in Frameworks */,
+				C81C96A02B87659A0091868E /* Lncmobile.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +105,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				74A129D5294A2A5B00C7A86C /* Lncmobile.xcframework */,
+				C81C969F2B87659A0091868E /* Lncmobile.xcframework */,
 				C8FFB7E32B83E55B00A6FE5F /* libresolv.9.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-lncmobiledemo.a */,
