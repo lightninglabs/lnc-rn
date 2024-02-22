@@ -899,17 +899,15 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@lightninglabs/lnc-core@0.2.1-alpha":
-  version "0.2.1-alpha"
-  resolved "https://registry.yarnpkg.com/@lightninglabs/lnc-core/-/lnc-core-0.2.1-alpha.tgz#b381ea29fb7bc20a7dd10334bb913bb50f6dac36"
-  integrity sha512-H297V3seL+PE786HcuAQiSass/3y0NSYCy3b4hNTZL4Io80Oy4WY49s08CpRuV8cNfjAzWjYSXkhorALjaRdwA==
+"@lightninglabs/lnc-core@^0.3.1-alpha":
+  version "0.3.1-alpha"
+  resolved "https://registry.yarnpkg.com/@lightninglabs/lnc-core/-/lnc-core-0.3.1-alpha.tgz#cfd6c0857a20013fb1819b40bd1158a2edc8bcf0"
+  integrity sha512-I/hThdItLWJ6RU8Z27ZIXhpBS2JJuD3+TjtaQXX2CabaUYXlcN4sk+Kx8N/zG/fk8qZvjlRWum4vHu4ZX554Fg==
 
-"@lightninglabs/lnc-rn@0.2.1-alpha.2":
-  version "0.2.1-alpha.2"
-  resolved "https://registry.yarnpkg.com/@lightninglabs/lnc-rn/-/lnc-rn-0.2.1-alpha.2.tgz#dd1f7273b3984c9257d6bb3ea86b69b337053112"
-  integrity sha512-yLn80pmWlPGNcFH8Ha2k9bBxRjMrGGk7ZUaQ2QtAAmnn/+SXavtm4h03NLJHKPkID0I9+hfqEgV+Dg+NpaR6vA==
+"@lightninglabs/lnc-rn@../..":
+  version "0.3.1-alpha"
   dependencies:
-    "@lightninglabs/lnc-core" "0.2.1-alpha"
+    "@lightninglabs/lnc-core" "^0.3.1-alpha"
 
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
