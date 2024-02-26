@@ -3,10 +3,10 @@
 buildscript {
     ext {
         buildToolsVersion = "31.0.0"
-        minSdkVersion = 21
-        compileSdkVersion = 31
-        targetSdkVersion = 31
-        kotlinVersion = "1.6.0"
+        minSdkVersion = 32
+        compileSdkVersion = 32
+        targetSdkVersion = 32
+        kotlinVersion = "1.8.22"
 
         if (System.properties['os.arch'] == "aarch64") {
             // For M1 Users we need to use the NDK 24 which added support for aarch64
@@ -21,15 +21,17 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.2.1")
+        classpath('com.android.tools.build:gradle:8.2.2')
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("de.undercouch:gradle-download-task:5.0.1")
+        classpath("com.facebook.react:react-native-gradle-plugin:0.71.19")
+        classpath("de.undercouch:gradle-download-task:5.5.0")
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
-
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.0.0-Beta4'
+}
 allprojects {
     repositories {
         maven {
@@ -51,3 +53,55 @@ allprojects {
         maven { url 'https://www.jitpack.io' }
     }
 }
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+subprojects {
+    beforeEvaluate {
+        project ->
+            if (project.hasProperty("android")) {
+                android {
+                    def agpVersion = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0].toInteger()
+                    if (namespace == null && agpVersion >= 7) {
+                        namespace project.group
+                    }
+                }
+            }
+    }
+    afterEvaluate { project ->
+       if (project.hasProperty('android')) {
+           project.android {
+               if (namespace == null) {
+                   namespace project.group
+               }
+           }
+       }
+   }
+}
+
+/*
+subprojects {
+   afterEvaluate { project ->
+       if (project.hasProperty('android')) {
+           project.android {
+               if (namespace == null) {
+                   namespace project.group
+               }
+           }
+       }
+   }
+}*/
