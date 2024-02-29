@@ -26,6 +26,7 @@ def getExtOrIntegerDefault(name) {
 }
 
 android {
+  namespace 'engineering.lightning.lnc.mobile.rn'
   compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
   buildToolsVersion getExtOrDefault('buildToolsVersion')
   defaultConfig {
