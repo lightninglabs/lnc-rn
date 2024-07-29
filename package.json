@@ -44,7 +44,7 @@
   },
   "homepage": "https://github.com/lightninglabs/lnc-rn#readme",
   "dependencies": {
-    "@lightninglabs/lnc-core": "^0.3.1-alpha"
+    "@lightninglabs/lnc-core": "^0.3.2-alpha"
   },
   "devDependencies": {
     "@babel/core": "7.18.10",
