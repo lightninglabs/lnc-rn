@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* lncmobiledemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* lncmobiledemoTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-lncmobiledemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-lncmobiledemo.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		74A129D6294A2A5C00C7A86C /* Lncmobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A129D5294A2A5B00C7A86C /* Lncmobile.xcframework */; };
-		7699B88040F8A987B510C191 /* libPods-lncmobiledemo-lncmobiledemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-lncmobiledemo-lncmobiledemoTests.a */; };
+		64513C49235C46C423261218 /* libPods-lncmobiledemo-lncmobiledemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B885D8556AEEF6B79C2FC591 /* libPods-lncmobiledemo-lncmobiledemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		BA5FA1676869F894FE561ED8 /* libPods-lncmobiledemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FDB4898D8659A35D6CED03F /* libPods-lncmobiledemo.a */; };
+		C86E78D42C5837980025B77D /* Lncmobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E78D32C5837980025B77D /* Lncmobile.xcframework */; };
+		C8FFB7E42B83E55B00A6FE5F /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FFB7E32B83E55B00A6FE5F /* libresolv.9.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +38,15 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = lncmobiledemo/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = lncmobiledemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = lncmobiledemo/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-lncmobiledemo-lncmobiledemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lncmobiledemo-lncmobiledemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-lncmobiledemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo.debug.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-lncmobiledemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo.release.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-lncmobiledemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lncmobiledemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74A129D5294A2A5B00C7A86C /* Lncmobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Lncmobile.xcframework; path = "../node_modules/@lightninglabs/lnc-rn/ios/Lncmobile.xcframework"; sourceTree = "<group>"; };
+		2F574C8B858EA0AD4D7DFCBF /* Pods-lncmobiledemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo.release.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo.release.xcconfig"; sourceTree = "<group>"; };
+		3ED389617228F1F00701DDEE /* Pods-lncmobiledemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo.debug.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo.debug.xcconfig"; sourceTree = "<group>"; };
+		496B2F00275C248BFDBE24E8 /* Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6CCB1ED25487E7AFB10734A8 /* Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = lncmobiledemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig"; path = "Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		9FDB4898D8659A35D6CED03F /* libPods-lncmobiledemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lncmobiledemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B885D8556AEEF6B79C2FC591 /* libPods-lncmobiledemo-lncmobiledemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lncmobiledemo-lncmobiledemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C86E78D32C5837980025B77D /* Lncmobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Lncmobile.xcframework; path = "../node_modules/@lightninglabs/lnc-rn/ios/Lncmobile.xcframework"; sourceTree = "<group>"; };
+		C8FFB7E32B83E55B00A6FE5F /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -53,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-lncmobiledemo-lncmobiledemoTests.a in Frameworks */,
+				64513C49235C46C423261218 /* libPods-lncmobiledemo-lncmobiledemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-lncmobiledemo.a in Frameworks */,
-				74A129D6294A2A5C00C7A86C /* Lncmobile.xcframework in Frameworks */,
+				C8FFB7E42B83E55B00A6FE5F /* libresolv.9.tbd in Frameworks */,
+				C86E78D42C5837980025B77D /* Lncmobile.xcframework in Frameworks */,
+				BA5FA1676869F894FE561ED8 /* libPods-lncmobiledemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,10 +105,11 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				74A129D5294A2A5B00C7A86C /* Lncmobile.xcframework */,
+				C86E78D32C5837980025B77D /* Lncmobile.xcframework */,
+				C8FFB7E32B83E55B00A6FE5F /* libresolv.9.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-lncmobiledemo.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-lncmobiledemo-lncmobiledemoTests.a */,
+				9FDB4898D8659A35D6CED03F /* libPods-lncmobiledemo.a */,
+				B885D8556AEEF6B79C2FC591 /* libPods-lncmobiledemo-lncmobiledemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,10 +148,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-lncmobiledemo.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-lncmobiledemo.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig */,
+				3ED389617228F1F00701DDEE /* Pods-lncmobiledemo.debug.xcconfig */,
+				2F574C8B858EA0AD4D7DFCBF /* Pods-lncmobiledemo.release.xcconfig */,
+				496B2F00275C248BFDBE24E8 /* Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig */,
+				6CCB1ED25487E7AFB10734A8 /* Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -159,12 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "lncmobiledemoTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				EB845069EEB4CA8900FB9FD3 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				B901573290B9AE96197A130A /* [CP] Embed Pods Frameworks */,
+				9CC2A0742A5451294940CEF1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,14 +184,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "lncmobiledemo" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				D943C24DA988CE6140964120 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				1855CEA3023B92843F5994D2 /* [CP] Embed Pods Frameworks */,
+				216558F1F77A065E54486304 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,7 +274,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+		1855CEA3023B92843F5994D2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,29 +291,58 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+		216558F1F77A065E54486304 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-lncmobiledemo-lncmobiledemoTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		9CC2A0742A5451294940CEF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B901573290B9AE96197A130A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D943C24DA988CE6140964120 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -331,55 +364,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+		EB845069EEB4CA8900FB9FD3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lncmobiledemo-lncmobiledemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo/Pods-lncmobiledemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lncmobiledemo-lncmobiledemoTests/Pods-lncmobiledemo-lncmobiledemoTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -434,7 +438,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig */;
+			baseConfigurationReference = 496B2F00275C248BFDBE24E8 /* Pods-lncmobiledemo-lncmobiledemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -461,7 +465,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig */;
+			baseConfigurationReference = 6CCB1ED25487E7AFB10734A8 /* Pods-lncmobiledemo-lncmobiledemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -485,7 +489,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-lncmobiledemo.debug.xcconfig */;
+			baseConfigurationReference = 3ED389617228F1F00701DDEE /* Pods-lncmobiledemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -511,7 +515,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-lncmobiledemo.release.xcconfig */;
+			baseConfigurationReference = 2F574C8B858EA0AD4D7DFCBF /* Pods-lncmobiledemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
