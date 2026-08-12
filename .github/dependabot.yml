@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Disable version update PRs; security updates are unaffected by this
+    # limit and will still be opened.
+    open-pull-requests-limit: 0
+
+  # The demo apps are unpublished React Native example apps, pinned to
+  # RN 0.70.6 and its unmaintained metro/CLI toolchain, which is the source
+  # of nearly all of their transitive advisories. Those trees cannot be
+  # cleared by bumping individual transitive packages, so the alerts are not
+  # actionable. Ignoring every dependency here suppresses both version and
+  # security update PRs for these directories without affecting the
+  # published package at the root.
+  #
+  # Note: this suppresses PRs only. Alerts still surface in the Security tab
+  # unless paired with a repo-level auto-triage rule on manifest path.
+  - package-ecosystem: "npm"
+    directories:
+      - "/demos/*"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+    ignore:
+      - dependency-name: "*"
